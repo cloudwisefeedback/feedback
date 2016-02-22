@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content=""/>
+
+    <title>云智慧</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/yunzhihui.css"/>
+</head>
+<body>
+<div class="bg">
+    <div class="title">
+        <img src="img/logo.png" alt="" width="100px"/>
+
+    </div>
+    <div class="opinion" id="feedback">
+        <div class="group clearfix">
+            <label>分类:</label>
+            <select name="" id="category" >
+                <option value="">选择分类</option>
+            </select>
+        </div>
+
+        <textarea name="" id="feedback_text"></textarea>
+        <div class="commit">
+            <div id="tip" class="tip"></div>
+            <div class="success" id="success"></div>
+            <a class="btn-blue" id="commit" href="javascript:void(0);">提交</a>
+        </div>
+
+    </div>
+</div>
+<script src="/js/lib/jquery-1.12.0.min.js"></script>
+<script src="/js/feedback.js"></script>
+
+</body>
+</html>

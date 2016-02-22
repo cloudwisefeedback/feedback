@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>云智慧-<%= title %></title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+
+
+<input type="text" id="category" placeholder="分类名称"/>
+<button id="add_category">添加分类</button>
+
+<br/><br/><br/>
+
+<div id="labels">
+    <button data-id="">全部</button>
+</div>
+
+<br/><br/>
+<table>
+    <thead>
+    <tr>
+        <td>序号</td>
+        <td>内容</td>
+        <td>ip</td>
+        <td>时间</td>
+    </tr>
+    </thead>
+    <tbody id="feedback_table">
+
+    </tbody>
+</table>
+
+<script src="/js/lib/jquery-1.12.0.min.js"></script>
+<script src="/js/feedback_list.js"></script>
+
+</body>
+</html>

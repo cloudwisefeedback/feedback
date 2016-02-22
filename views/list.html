@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content=""/>
+
+    <title>云智慧</title>
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/yunzhihui.css"/>
+</head>
+<body>
+
+<div class="title">
+    <img src="img/logo.png" alt="" width="100"/>
+
+    <div class="right">
+        <a href="javascript:void(0);" class="btn-border Popup" id="user">管理用户</a>
+        <a href="javascript:void(0);" class="btn-border Popup" id="modal">添加用户</a>
+        <a href="javascript:void(0);" class="btn-border" id="exit">退出</a>
+    </div>
+</div>
+<div class="list">
+    <div class="filter" id="labels">
+        <label>分类：</label>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <td width="10%">序号</td>
+            <td width="70%">意见</td>
+            <td width="20%">时间</td>
+        </tr>
+        </thead>
+        <tbody id="feedback_table">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade animated" id="modal1">
+    <div class="close disappear">&times;</div>
+    <div class="modal-content">
+        <div class="title-modal">
+            <h4>添加用户</h4>
+        </div>
+        <div class="modal-main">
+            <div class="group clearfix">
+                <label>账户：</label>
+                <div class="input">
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="filter group">
+                <label>权限：</label>
+                <a class="active" href="javascript:void(0);">管理员</a>
+                <a href="javascript:void(0);">普通用户</a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:void(0);" class="btn-defult disappear">取消</a>
+            <a href="javascript:void(0);" class="btn-primary">保存</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade animated" id="user1">
+    <div class="close disappear">&times;</div>
+    <div class="modal-content">
+        <div class="title-modal">
+            <h4>管理用户</h4>
+        </div>
+        <div class="modal-main">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td width="30%">账户</td>
+                    <td width="50">权限设置</td>
+                    <td width="20%">操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>olive</td>
+                    <td>
+                        <div class="filter sm group">
+                            <a class="active" href="javascript:void(0);">管理员</a>
+                            <a href="javascript:void(0);">普通用户</a>
+                        </div>
+                    </td>
+                    <td><a href="javascript:void(0);">&times;</a></td>
+                </tr>
+                <tr>
+                    <td>olive</td>
+                    <td>
+                        <div class="filter sm group">
+                            <a class="active" href="javascript:void(0);">管理员</a>
+                            <a href="javascript:void(0);">普通用户</a>
+                        </div>
+                    </td>
+                    <td><a href="javascript:void(0);">&times;</a></td>
+                </tr>
+                <tr>
+                    <td>olive</td>
+                    <td>
+                        <div class="filter sm group">
+                            <a class="active" href="javascript:void(0);">管理员</a>
+                            <a href="javascript:void(0);">普通用户</a>
+                        </div>
+                    </td>
+                    <td><a href="javascript:void(0);">&times;</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:void(0);" class="btn-defult disappear">取消</a>
+            <a href="javascript:void(0);" class="btn-primary">保存</a>
+        </div>
+    </div>
+</div>
+<div class="modal fade animated" id="add1">
+    <div class="close disappear">&times;</div>
+    <div class="modal-content">
+        <div class="title-modal">
+            <h4>添加分类</h4>
+        </div>
+        <div class="modal-main">
+            <div class="group clearfix">
+                <label>名称：</label>
+                <div class="input">
+                    <input id="category" type="text"/>
+                    <div class="tip_1" id="tip"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:void(0);" class="btn-defult disappear">取消</a>
+            <a href="javascript:void(0);" class="btn-primary" id="add_category">添加</a>
+        </div>
+    </div>
+</div>
+<div class="bg-black"></div>
+<script src="/js/lib/jquery-1.12.0.min.js"></script>
+<script src="/js/lib/jquery.cookie.js"></script>
+<script src="/js/feedback_list.js"></script>
+
+<script>
+
+
+
+</script>
+
+</body>
+</html>
