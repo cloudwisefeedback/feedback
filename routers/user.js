@@ -10,7 +10,7 @@ router.post('/add', function (req, res, next) {
 
     var username = req.body.username || '';
     var password = req.body.password || '123456';
-    var level = req.body.level || 2;
+    var level = req.body.level || 'admin';  // admin--管理员 normal--普通用户
 
     if (username === '') {
         res.json(resRule.error('用户名不能为空!'));
@@ -83,9 +83,55 @@ router.get('/exit', function (req, res, next) {
 /**
  * 用户删除
  */
+router.get('/delete', function (req, res, next) {
+
+    var user_id = req.query.id || '';
+
+    UserDao.findByIdAndRemove(user_id, function (error, user) {
+        if (error) {
+            return next(error);
+        }
+
+        res.json(resRule.success('删除成功！', user));
+
+    });
+
+});
 
 /**
- * 用户信息编辑
+ * 查询所有用户
  */
+router.get('/find', function (req, res, next) {
+
+    UserDao.find({}, function (error, data) {
+        if (error) {
+            return next(error);
+        }
+        res.json(resRule.success('查询成功！', data));
+    });
+
+});
+
+/**
+ * 用户信息更改
+ */
+
+router.post('/updateLevel', function (req, res, next) {
+
+    var user_id = req.body.id;
+    var level = req.body.level || '';  // admin--管理员 normal--普通用户
+    if (level == '') {
+        res.json(resRule.error('权限不能为空'));
+        return;
+    }
+
+    UserDao.findByIdAndUpdate(user_id, {level: level}, function (error, data) {
+        if (error) {
+            return next(error);
+        }
+        res.json(resRule.success('更新成功！', data));
+    });
+
+});
 
 module.exports = router;
