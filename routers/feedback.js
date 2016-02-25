@@ -49,7 +49,7 @@ router.get('/find', function (req, res, next) {
             return next(error);
         }
         res.json(resRule.success('查询成功！', data));
-    });
+    }, {create_date: -1});
 
 });
 
@@ -65,7 +65,7 @@ router.get('/findByCategory', function (req, res, next) {
             return next(error);
         }
         res.json(resRule.success('查询成功！', data));
-    });
+    }, {create_date: -1});
 
 });
 

@@ -23,8 +23,10 @@ BaseDao.prototype.save = function (doc, callback) {
  * @param doc
  * @param callback
  */
-BaseDao.prototype.find = function (doc, callback) {
-    this.model.find(doc, callback);
+BaseDao.prototype.find = function (doc, callback, sort) {
+    sort = sort || {};
+    this.model.find(doc).sort(sort).exec(callback);
+    //this.model.find(doc, callback);
 }
 /**
  * 查询单个
