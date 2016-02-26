@@ -3,7 +3,7 @@ $(function () {
     // 查询所有分类
     $.ajax({
         url: '/api/category/find',
-        method: 'get',
+        method: 'GET',
         dataType: 'json',
         success: function (result) {
             if (result.status == 'success') {
@@ -38,6 +38,44 @@ $(function () {
         });
     });
 
+//添加用户
+    $('#add_user').click(function () {
+        var username = $('#name').val();
+        var level = $('#level').find('a.active').text();
+        var self = $(this);
+        $.post('/api/user/add', {username: username,level:level}, function (result) {
+            if(result.status == 'success'){
+                self.closest('.modal').hide();
+                $('.bg-black').hide();
+                $('#name').val('');
+            }else{
+                $('#tip1').text(result.msg);
+            }
+        });
+    });
+
+    //用户管理
+
+    $('#user_massage').click(function () {
+
+        var active = $('.sm').find('a.active');
+        for(var i =0;i<active.length;i++){
+            var level = $(active[i]).text();
+            var self = $(this);
+            $.post('/api/user/updateLevel', {level:level}, function (result) {
+                if(result.status == 'success'){
+                    self.closest('.modal').hide();
+                    $('.bg-black').hide();
+                    $('#level').val('');
+                }else{
+                    $('#tip2').text(result.msg);
+                }
+            });
+        }
+
+
+
+    });
 
 
     $(document).on('click','#exit',function(){
@@ -60,7 +98,10 @@ $(function () {
     });
     $(document).on('click', '.disappear', function (e) {
         $('#category').val('');
+        $('#name').val('');
         $('#tip').empty();
+        $('#tip1').empty();
+        $('#tip2').empty();
         $('.bg-black').hide();
         $('.modal').addClass('fadeOut').removeClass('fadeIn').hide();
         e.preventDefault();
