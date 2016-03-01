@@ -55,8 +55,8 @@
             </div>
             <div class="filter group" id="level">
                 <label>权限：</label>
-                <a  href="javascript:void(0);">管理员</a>
-                <a class="active" href="javascript:void(0);">普通用户</a>
+                <a  href="javascript:void(0);" level="admin">管理员</a>
+                <a class="active" href="javascript:void(0);" level="normal">普通用户</a>
             </div>
         </div>
         <div class="modal-footer">
@@ -81,46 +81,16 @@
                     <td width="20%">操作</td>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>olive</td>
-                    <td>
-                        <div class="filter sm group">
-                            <a class="active" href="javascript:void(0);">管理员</a>
-                            <a href="javascript:void(0);">普通用户</a>
-                        </div>
-                    </td>
-                    <td><a href="javascript:void(0);">&times;</a></td>
-                </tr>
-                <tr>
-                    <td>olive</td>
-                    <td>
-                        <div class="filter sm group">
-                            <a class="active" href="javascript:void(0);">管理员</a>
-                            <a href="javascript:void(0);">普通用户</a>
-                        </div>
-                    </td>
-                    <td><a href="javascript:void(0);">&times;</a></td>
-                </tr>
-                <tr>
-                    <td>olive</td>
-                    <td>
-                        <div class="filter sm group">
-                            <a class="active" href="javascript:void(0);">管理员</a>
-                            <a href="javascript:void(0);">普通用户</a>
-                        </div>
-                    </td>
-                    <td><a href="javascript:void(0);">&times;</a></td>
-                </tr>
+                <tbody id="feed_user">
+
+
+
 
                 </tbody>
             </table>
             <div id="tip2" class="tip_1"></div>
         </div>
-        <div class="modal-footer">
-            <a href="javascript:void(0);" class="btn-defult disappear">取消</a>
-            <a href="javascript:void(0);" class="btn-primary" id="user_massage">保存</a>
-        </div>
+
     </div>
 </div>
 <div class="modal fade animated" id="add1">

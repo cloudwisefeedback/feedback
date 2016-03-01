@@ -62,6 +62,7 @@ router.post('/login', function (req, res, next) {
         // 设置session信息
         req.session.user = user;
 
+        res.cookie('cloudwise-user-info', JSON.stringify({level:user.level,username:user.username}), {maxAge: 5 * 24 * 60 * 60, path: '/'});
         res.json(resRule.success('登录成功！', user));
 
     });
@@ -76,6 +77,7 @@ router.get('/exit', function (req, res, next) {
         if (err) {
             return next(err);
         }
+        res.cookie('cloudwise-user-info', null, {maxAge: 0});
         res.json(resRule.success('退出成功！'));
     });
 });
@@ -86,6 +88,10 @@ router.get('/exit', function (req, res, next) {
 router.get('/delete', function (req, res, next) {
 
     var user_id = req.query.id || '';
+    if (user_id == '') {
+        res.json(resRule.error('user_id不能为空！'));
+        return;
+    }
 
     UserDao.findByIdAndRemove(user_id, function (error, user) {
         if (error) {
@@ -110,6 +116,13 @@ router.get('/find', function (req, res, next) {
         res.json(resRule.success('查询成功！', data));
     });
 
+});
+
+/**
+ * 查询当前用户
+ */
+router.get('/current_user', function (req, res, next) {
+    res.json(resRule.success('查询成功！', req.session.user));
 });
 
 /**
